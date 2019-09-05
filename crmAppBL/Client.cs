@@ -1,25 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace crmAppBL
 {
     public class Client
     {
+
+        public Client()
+        {
+
+        }
+
+        public Client(int clientID)
+        {
+            this.ClientID = clientID;
+        }
+
         private string _surname;
         private string _name;
         private string _addressemail;
         private string _clientID;
-
-        public Client()
-        {
-            Licznik++;
-        }
-
+        
         //Properties
-
 
         public static int Licznik { get; set; }
         public string Surname { get; set; }
@@ -40,7 +41,51 @@ namespace crmAppBL
             }
         }
 
+        // Methods
 
+        public bool Validate()
+        {
+
+            var ok = true;
+
+            if (string.IsNullOrWhiteSpace(Surname)) { ok = false; }
+            if (string.IsNullOrWhiteSpace(Addressemail)) { ok = false; }
+
+
+            return ok;
+
+           }
+
+
+        public bool SaveClient()
+        {
+            /// <summary>
+            /// Funkcja zapisująca
+            /// </summary>
+            /// <returns></returns>
+            return true;
+
+        }
+
+        public Client GetClient(int clientID)
+        {
+            /// <summary>
+            /// Funkcja pobierająca klient po ID
+            /// </summary>
+            /// <returns></returns>
+            return new Client();
+
+        }
+
+        public List<Client> GetClient()
+        {
+            /// <summary>
+            /// Funkcja pobierająca wszystkich klientów
+            /// </summary>
+            /// <returns></returns>
+            return new List<Client>();
+
+        }
 
 
 

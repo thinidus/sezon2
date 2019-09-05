@@ -1,7 +1,6 @@
-﻿using System;
-using crmAppBL;
+﻿using crmAppBL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
- 
+
 
 namespace crmAppBL_TEST
 {
@@ -9,13 +8,14 @@ namespace crmAppBL_TEST
     public class Client_TEST
     {
         [TestMethod]
+        
         public void TestFullName()
         {
             //Arrange
             Client client = new Client();
             client.Name = "Artur";
             client.Surname = "Sury";
-            string expected = "Artur Sury";
+            string expectedFullName = "Artur Sury";
 
 
             //Act
@@ -24,7 +24,7 @@ namespace crmAppBL_TEST
 
 
             //Assert
-            Assert.AreEqual(expected, current);
+            Assert.AreEqual(expectedFullName, current);
         }
 
         [TestMethod]
@@ -32,9 +32,9 @@ namespace crmAppBL_TEST
         {
             //Arrange
             Client client = new Client();
-            
+
             client.Surname = "Sury";
-            string expected = "Sury";
+            string expectedEmptyName = "Sury";
 
 
             //Act
@@ -43,7 +43,7 @@ namespace crmAppBL_TEST
 
 
             //Assert
-            Assert.AreEqual(expected, current);
+            Assert.AreEqual(expectedEmptyName, current);
         }
 
         [TestMethod]
@@ -52,8 +52,8 @@ namespace crmAppBL_TEST
             //Arrange
             Client client = new Client();
             client.Name = "Artur";
-            
-            string expected = "Artur";
+
+            string expectedEmptyName = "Artur";
 
 
             //Act
@@ -62,31 +62,68 @@ namespace crmAppBL_TEST
 
 
             //Assert
-            Assert.AreEqual(expected, current);
+            Assert.AreEqual(expectedEmptyName, current);
         }
 
         [TestMethod]
-
-        public void TestStaticProp()
+        public void TestValidate()
         {
-
             //Arrange
-            var client1 = new Client();
-            client1.Name = "Jacek";
 
-            var client2 = new Client();
-            client1.Name = "Placek";
+            Client client = new Client();
+            client.Addressemail = "artur@sury.pl";
+            client.Surname = "Sury";
 
-            var client3 = new Client();
-            client1.Name = "Pankracy";
+            bool expectedResultTestValidate = true;
 
             //Act
 
+            var resultTestValidate = client.Validate();
+
             //Assert
+            Assert.AreEqual(expectedResultTestValidate, resultTestValidate);
 
-            Assert.AreEqual(6, Client.Licznik);
+
+        }
+
+        [TestMethod]
+        public void TestValidateNoSurname()
+        {
+            //Arrange
+
+            Client client = new Client();
+            client.Addressemail = "artur@sury.pl";
+            
+
+            bool expectedResultTestValidate = false;
+
+            //Act
+
+            var resultTestValidate = client.Validate();
+
+            //Assert
+            Assert.AreEqual(expectedResultTestValidate, resultTestValidate);
 
 
+        }
+
+        [TestMethod]
+        public void TestValidateNoEmail()
+        {
+            //Arrange
+
+            Client client = new Client(5);
+            client.Surname = "Sury";
+
+
+            bool expectedResultTestValidate = false;
+
+            //Act
+
+            var resultTestValidate = client.Validate();
+
+            //Assert
+            Assert.AreEqual(expectedResultTestValidate, resultTestValidate);
 
 
         }
