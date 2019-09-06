@@ -57,35 +57,7 @@ namespace crmAppBL
            }
 
 
-        public bool SaveClient()
-        {
-            /// <summary>
-            /// Funkcja zapisująca
-            /// </summary>
-            /// <returns></returns>
-            return true;
-
-        }
-
-        public Client GetClient(int clientID)
-        {
-            /// <summary>
-            /// Funkcja pobierająca klient po ID
-            /// </summary>
-            /// <returns></returns>
-            return new Client();
-
-        }
-
-        public List<Client> GetClient()
-        {
-            /// <summary>
-            /// Funkcja pobierająca wszystkich klientów
-            /// </summary>
-            /// <returns></returns>
-            return new List<Client>();
-
-        }
+        
 
 
 

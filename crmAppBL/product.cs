@@ -38,35 +38,7 @@ namespace crmAppBL
         }
 
 
-        public bool SaveProduct()
-        {
-            /// <summary>
-            /// Funkcja zapisująca
-            /// </summary>
-            /// <returns></returns>
-            return true;
-
-        }
-
-        public Client GetProduct(int productID)
-        {
-            /// <summary>
-            /// Funkcja pobierająca produkt po ID
-            /// </summary>
-            /// <returns></returns>
-            return new Client();
-
-        }
-
-        public List<Product> GetProduct()
-        {
-            /// <summary>
-            /// Funkcja pobierająca wszystkie produkty
-            /// </summary>
-            /// <returns></returns>
-            return new List<Product>();
-
-        }
+        
 
 
     }
