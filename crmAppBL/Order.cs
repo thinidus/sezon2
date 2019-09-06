@@ -32,35 +32,7 @@ namespace crmAppBL
         }
 
 
-        public bool SaveOrder()
-        {
-            /// <summary>
-            /// Funkcja zapisująca
-            /// </summary>
-            /// <returns></returns>
-            return true;
-
-        }
-
-        public Order GetOrder(int orderID)
-        {
-            /// <summary>
-            /// Funkcja pobierająca produkt po ID
-            /// </summary>
-            /// <returns></returns>
-            return new Order();
-
-        }
-
-        public List<Order> GetOrder()
-        {
-            /// <summary>
-            /// Funkcja pobierająca wszystkie produkty
-            /// </summary>
-            /// <returns></returns>
-            return new List<Order>();
-
-        }
+        
 
 
 

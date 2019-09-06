@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace crmAppBL
 {
-    class Product
+    public class Product
     {
 
         public Product()
