@@ -5,7 +5,7 @@ namespace crmAppBL
 {
     public class Order
     {
-
+        #region CONSTRUCTORS
         public Order()
         {
 
@@ -16,10 +16,22 @@ namespace crmAppBL
             OrderID = orderID;
         }
 
+        #endregion
+
+        #region PROPERTIES
+
         public int OrderID { get; private set; }
         public DateTimeOffset? OrderDate { get; set; }
 
-        public bool Validate()
+        public List<OrderPosition> orderPositions { get; set; }
+        public int ClientID { get; set;  }
+        public int DeliveryAddress { get; set; }
+
+        #endregion
+
+        #region METODY
+
+        public bool Validate() 
         {
 
 
@@ -31,8 +43,13 @@ namespace crmAppBL
 
         }
 
+        public override string ToString()
+        {
+            return OrderDate.Value.Date + "[ " + OrderID + " ]";
+        }
 
-        
+        #endregion
+
 
 
 

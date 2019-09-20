@@ -37,7 +37,7 @@ namespace crmAppBL
             /// Funkcja pobierająca wszystkich klientów
             /// </summary>
             /// <returns></returns>
-            return new List<Client>();
+            return new List<Client>(); 
 
         }
 

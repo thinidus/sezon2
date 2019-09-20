@@ -10,7 +10,7 @@ namespace crmAppBL
     public class OrderRepo
     {
 
-        
+
 
         public Order GetOrder(int orderID)
         {
@@ -22,9 +22,9 @@ namespace crmAppBL
             /// <returns></returns>
             /// 
 
-            if(orderID == 10)
+            if (orderID == 10)
             {
-                order.OrderDate = new DateTimeOffset(2018, 4, 20,  11, 00, 00, new TimeSpan(7, 0, 0));
+                order.OrderDate = new DateTimeOffset(2018, 4, 20, 11, 00, 00, new TimeSpan(7, 0, 0));
             }
 
             return order;
@@ -51,5 +51,61 @@ namespace crmAppBL
 
         }
 
+        public PrintOrder GetPrintOrder(int orderID)
+        {
+            PrintOrder printOrder = new PrintOrder();
+            //Kod który pobiera zdefiniowane pola zamówienia.
+            //Tymczasowe dane zakodowane na stałe
+
+            if (orderID == 10)
+            {
+
+                printOrder.Name = "Artur";
+                printOrder.Surname = "Sury";
+                printOrder.OrderDate = new DateTimeOffset(2019, 09, 17, 12, 00, 00, new TimeSpan(5, 0, 0));
+                printOrder.OrderAddres = new Address()
+                {
+                    AddressType = 2,
+                    Street = "Osadnicza",
+                    City = "Bielsko-Biała",
+                    ZipCode = "43-300"
+                };
+                printOrder.PrintOrderPositions = new List<PrintOrderPosition>();
+            }
+
+            //Dane zakodowane na stałę: powinno być pobrane z DB
+
+            if (orderID == 10)
+            {
+                var PrintOrderPosition = new PrintOrderPosition()
+                {
+                    ProductName = "Stół",
+                    OrderPrice = 300.50M,
+                    Amount = 10
+
+
+                };
+
+                printOrder.PrintOrderPositions.Add(PrintOrderPosition);
+
+                PrintOrderPosition = new PrintOrderPosition()
+                {
+                    ProductName = "Krzesło",
+                    OrderPrice = 300.50M,
+                    Amount = 10
+
+
+                };
+
+                printOrder.PrintOrderPositions.Add(PrintOrderPosition);
+
+            }
+
+
+            return printOrder;
+        }
+
     }
+
 }
+

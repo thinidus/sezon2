@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace crmAppBL
 {
-    public class Product
+    public class Product : BaseClass
     {
 
         public Product()
@@ -23,6 +23,7 @@ namespace crmAppBL
         public string Describe { get; set; }
         public string ProductName { get; set; }
 
+        //Methods
         public bool Validate()
         {
             
@@ -37,8 +38,11 @@ namespace crmAppBL
 
         }
 
+        public override string ToString()
+        {
+            return ProductName;
+        }
 
-        
 
 
     }

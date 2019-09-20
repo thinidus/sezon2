@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace crmAppBL
 {
     public class ProductRepo
     {
 
+        
 
 
         public Product GetProduct(int productID)
@@ -23,6 +25,11 @@ namespace crmAppBL
                 productRepo.CurrentPrice = 200.00M;
 
             }
+
+            Object myObject = new Object();
+            Console.WriteLine("Wyświetlony obiekt myObject: " + myObject.ToString());
+            Console.WriteLine("Wyświetlony obiekt ProductRepo: " + productRepo.ToString());
+
 
             return productRepo;
 
