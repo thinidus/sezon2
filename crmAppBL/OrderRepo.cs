@@ -41,13 +41,28 @@ namespace crmAppBL
 
         }
 
-        public bool SaveOrder()
+        public bool SaveOrder(Order order)
         {
             /// <summary>
             /// Funkcja zapisująca
             /// </summary>
             /// <returns></returns>
-            return true;
+            var succes = true;
+            if (order.IsChanged && order.DataOK)
+            {
+                if (order.IsNew)
+                {
+                    //insert
+                }
+                else
+                {
+                    //update
+
+                }
+            }
+
+
+            return succes;
 
         }
 

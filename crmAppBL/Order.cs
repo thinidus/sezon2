@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace crmAppBL
 {
-    public class Order
+    public class Order : BaseClass
     {
         #region CONSTRUCTORS
         public Order()
@@ -31,7 +31,7 @@ namespace crmAppBL
 
         #region METODY
 
-        public bool Validate() 
+        public override bool Validate() 
         {
 
 

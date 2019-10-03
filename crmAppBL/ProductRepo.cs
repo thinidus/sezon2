@@ -6,7 +6,7 @@ namespace crmAppBL
     public class ProductRepo
     {
 
-        
+
 
 
         public Product GetProduct(int productID)
@@ -45,13 +45,29 @@ namespace crmAppBL
 
         }
 
-        public bool SaveProduct()
+        public bool SaveProduct(Product product)
         {
             /// <summary>
             /// Funkcja zapisująca
             /// </summary>
             /// <returns></returns>
-            return true;
+            /// 
+            var succes = true;
+            if (product.IsChanged && product.DataOK)
+            {
+                if (product.IsNew)
+                {
+                    //insert
+                }
+                else
+                {
+                    //update
+
+                }
+            }
+
+
+            return succes;
 
         }
 

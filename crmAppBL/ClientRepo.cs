@@ -41,13 +41,28 @@ namespace crmAppBL
 
         }
 
-        public bool SaveClient()
+        public bool SaveClient(Client client)
         {
             /// <summary>
             /// Funkcja zapisująca
             /// </summary>
             /// <returns></returns>
-            return true;
+            var succes = true;
+            if (client.IsChanged && client.DataOK)
+            {
+                if (client.IsNew)
+                {
+                    //insert
+                }
+                else
+                {
+                    //update
+
+                }
+            }
+
+
+            return succes;
 
         }
     }

@@ -2,7 +2,7 @@
 
 namespace crmAppBL
 {
-    public class Client
+    public class Client : BaseClass
     {
 
         public Client()
@@ -43,7 +43,7 @@ namespace crmAppBL
 
         // Methods
 
-        public bool Validate()
+        public override bool Validate()
         {
 
             var ok = true;

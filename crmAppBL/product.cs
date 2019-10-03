@@ -24,7 +24,7 @@ namespace crmAppBL
         public string ProductName { get; set; }
 
         //Methods
-        public bool Validate()
+        public override  bool Validate()
         {
             
 

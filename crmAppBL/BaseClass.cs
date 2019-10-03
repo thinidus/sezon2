@@ -10,11 +10,11 @@
         {
             get
             {
-                return true;
+                return Validate();
             }
         }
 
-
+        public abstract bool Validate();
     }
 
     public enum ObjectStateOption
